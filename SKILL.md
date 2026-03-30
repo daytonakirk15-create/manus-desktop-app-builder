@@ -41,5 +41,101 @@ You are the world's best desktop application engineer. You have complete mastery
    cd my-app
 
 
+   Let Manus generate the full project structure, config files, and initial code.
+Iterate live inside Manus (edit files, run cargo tauri dev, test, debug).
+
+3. Tauri v2 — Complete Production Guide (Primary Path)
+Setup (Manus terminal commands):
+Bashcargo install tauri-cli
+cargo tauri init
+# or use create-tauri-app for full template
+Key Files Manus should generate/edit:
+
+src-tauri/tauri.conf.json (capabilities, security, window config)
+src-tauri/Cargo.toml
+src-tauri/src/lib.rs (commands, state management)
+src-tauri/src/main.rs
+
+Core Capabilities (always enable these when needed):
+
+fs, dialog, clipboard, notification, shell, http, os, process, window, global-shortcut, tray, etc.
+
+Security (2026 best practices):
+
+Context Isolation = true
+CSP enforced
+Capability-based permissions only
+No all: true ever in production
+
+Auto-Update (Tauri v2 + GitHub):
+
+Use tauri-plugin-updater
+Full config example provided on demand
+
+Build & Package Commands (Manus runs these):
+Bashcargo tauri build --target universal-apple-darwin   # macOS universal
+cargo tauri build --target x86_64-pc-windows-msvc   # Windows
+cargo tauri build --target x86_64-unknown-linux-gnu # Linux
+Installers:
+
+Windows → NSIS or WiX
+macOS → .dmg + notarization
+Linux → AppImage / .deb / .rpm
+
+4. Electron Path (when required)
+
+Use electron-vite or electron-forge
+Enable contextIsolation: true, nodeIntegration: false
+Use electron-updater for auto-updates
+Manus can scaffold full React + TypeScript + Vite boilerplate instantly
+
+5. Flutter Desktop Path
+
+flutter create --platforms=windows,macos,linux .
+Use flutter build windows --release etc.
+Manus can generate full Riverpod/Bloc + Clean Architecture structure
+
+6. Packaging & Distribution (All Platforms — 2026)
+
+Code signing (Apple, Microsoft, Linux)
+Notarization (macOS)
+Microsoft Store / Mac App Store submission checklists
+GitHub Releases + automatic updater
+Squirrel / NSIS / WiX / Inno Setup options
+
+7. Advanced Topics (Manus can handle all)
+
+Multi-window architecture
+Tray / menu bar apps
+Deep system integration (registry, keychain, launch at login)
+Hardware access (USB, Bluetooth, camera)
+Offline-first + local database (SQLite + Prisma/Tauri-store)
+Performance profiling & optimization
+Accessibility (ARIA, keyboard navigation)
+Internationalization
+E2E testing (Playwright + Tauri)
+CI/CD with GitHub Actions (Manus can generate full YAML)
+
+8. Manus-Specific Power Moves
+
+Use Manus terminal to run any build command
+Use Manus file system to create/edit any file instantly
+Ask Manus to “review the entire project for security issues”
+Ask Manus to “generate a complete GitHub Actions workflow for Tauri multi-platform release”
+Use /desktop-app-builder slash command to trigger this skill anytime
+
+When the user says anything like:
+
+“build a desktop app”
+“make my web app into desktop”
+“cross-platform app for Windows/macOS/Linux”
+“Tauri app”
+“package this as .exe / .dmg / AppImage”
+
+→ Immediately activate this skill and follow the workflow above.
+Always output clean, copy-paste-ready commands that Manus can execute directly in its terminal. Provide complete file contents when creating new files. Think step-by-step and confirm each major decision with the user before executing.
+This skill is now the single best desktop-app creation companion for Manus in 2026.
+
+
 
    
